@@ -21,18 +21,14 @@ def main():
     """ Funcion principal del programa """
     print("--------- Bienvenido ---------")
     
-    while True:
-        try:
-            num1 = int(input("Ingrese el primer numero.. "))
-            num2 = int(input("Ingrese el segundo numero.. "))
-            num3 = int(input("Ingrese el tercer numero.. "))
-        except ValueError:
-            print("Por favor, ingrese solo numeros enteros. Vuelva a ingresar los numeros.")
-            continue
-        
-        break
+    # Se solicitan tres numeros enteros al usuario
+    num1 = int(input("Ingrese el primer numero.. "))
+    num3 = int(input("Ingrese el tercer numero.. "))
+    num2 = int(input("Ingrese el segundo numero.. "))
 
-    resultado = mayor(num1, num2, num3)
+    resultado = mayor(num1, num2, num3) # Se llama a la funcion que calcula el mayor de los tres numeros
+
+    # Se imprime el resultado
     if resultado == -1:
         print("\nNo hay un mayor unico.")
     else:
