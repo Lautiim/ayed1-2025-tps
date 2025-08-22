@@ -20,11 +20,11 @@ def total_viajes(viajes: int) -> float:
             if i <= 20:
                 gasto_total += valor_viaje  # Entre 1 y 20 viajes el valor es el normal
             elif i <= 30: # Entre 21 y 30 viajes el valor tiene un 20% de descuento 
-                gasto_total += (valor_viaje * 0.80)
+                gasto_total += (valor_viaje * 0.8)
             elif i <= 40: # Entre 31 y 40 viajes el valor tiene un 30% de descuento
-                gasto_total += (valor_viaje * 0.70)
+                gasto_total += (valor_viaje * 0.7)
             elif i > 40: # A partir de mas de 40 viajes el valor tiene un 40% de descuento
-                gasto_total += (valor_viaje * 0.60)
+                gasto_total += (valor_viaje * 0.6)
 
         return gasto_total
     
