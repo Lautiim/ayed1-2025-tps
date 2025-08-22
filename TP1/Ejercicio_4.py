@@ -17,7 +17,7 @@ def calcular_cambio(monto: int, recibido: int) -> list:
         assert valor_cambio < 0, "El dinero entregado es menor que el total a pagar"
     elif valor_cambio == 0:
         assert valor_cambio == 0, "El cambio es cero, no hay billetes que devolver."
-    elif ((recibido - monto) % valores_billetes[-1] != 0): # Si el cambio no es un multiplo de 10 no existe un billete que cubra la necesidad
+    elif ((recibido - monto) % valores_billetes[-1] != 0): # Si el cambio no es un multiplo del billete de menor valor no existe un billete que cubra la necesidad
         assert ((recibido - monto) % 10 != 0), "El cambio no se puede devolver debido a la falta de billetes con denominacion adecuada."
     else:
         for valor in valores_billetes: # Recorremos los valores de los billetes
@@ -43,7 +43,7 @@ def main():
             print("\nEl dinero recibido es menor que el monto total.")
         elif recibido == monto_total: # Si el dinero recibido es igual al monto total
             print("\nNo hay cambio que devolver.")
-        elif ((recibido - monto_total) % valores_billetes[-1] != 0): # Si el cambio no es un multiplo de 10 no existe un billete que cubra la necesidad
+        elif ((recibido - monto_total) % valores_billetes[-1] != 0): # Si el cambio no es un multiplo del billete de menor valor no existe un billete que cubra la necesidad
             print("\nEl cambio no se puede devolver debido a la falta de billetes con denominacion adecuada.")
         else: # Si el monto recibido es mayor al monto total
             cambio = calcular_cambio(monto_total, recibido) # Se llama a la funcion para calcular el cambio
