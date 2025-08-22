@@ -1,4 +1,4 @@
-def total_viajes(viajes :int) -> float:
+def total_viajes(viajes: int) -> float:
     """Funcion para calcular el total de gastos al viajar en subte dentro de un mes.
 
     Pre: Recibe un numero entero, que representa la cantidad de viajes.

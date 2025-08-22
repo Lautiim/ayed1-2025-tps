@@ -1,4 +1,4 @@
-def es_bisiesto(anio :int) -> bool:
+def es_bisiesto(anio: int) -> bool:
     """ Verifica si un año es bisiesto 
     
         Pre: Recibe un numero entero.
@@ -13,7 +13,7 @@ def es_bisiesto(anio :int) -> bool:
     else: # En caso de no cumplir estas condiciones es porque no es bisiesto.
         return False
 
-def validar_fecha(dia :int, mes :int, anio :int) -> bool:
+def validar_fecha(dia: int, mes: int, anio: int) -> bool:
     """ Verifica si una fecha es valida
 
         Pre: Recibe tres numeros enteros que representan una fecha (dia, mes, año).

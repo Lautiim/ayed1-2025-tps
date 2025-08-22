@@ -1,4 +1,4 @@
-def mayor(num1 :int, num2 :int, num3 :int) -> int:
+def mayor(num1: int, num2: int, num3: int) -> int:
     """ Obtener el mayor de 3 numeros
 
     Pre: Recibe tres numeros, los numeros deben ser enteros.
