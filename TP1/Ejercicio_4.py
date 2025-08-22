@@ -16,8 +16,8 @@ def calcular_cambio(monto: int, recibido: int) -> list:
     if valor_cambio < 0:
         assert valor_cambio < 0, "El dinero entregado es menor que el total a pagar"
     elif valor_cambio == 0:
-        return [0, 0, 0, 0, 0, 0, 0] # Si el cambio es cero se devuelve una lista con ceros. Es decir, no hay cambio que devolver.
-    elif ((recibido - monto) % 10 != 0): # Si el cambio no es un multiplo de 10 no existe un billete que cubra la necesidad
+        assert valor_cambio == 0, "El cambio es cero, no hay billetes que devolver."
+    elif ((recibido - monto) % valores_billetes[-1] != 0): # Si el cambio no es un multiplo de 10 no existe un billete que cubra la necesidad
         assert ((recibido - monto) % 10 != 0), "El cambio no se puede devolver debido a la falta de billetes con denominacion adecuada."
     else:
         for valor in valores_billetes: # Recorremos los valores de los billetes
@@ -38,18 +38,21 @@ def main():
     recibido = int(input("Ingrese el dinero recibido (-1 para cancelar): "))
 
     while recibido != -1:  # Se repite el hasta que el usuario ingrese -1
+
         if recibido < monto_total: # Si el dinero recibido es menor al monto total
             print("\nEl dinero recibido es menor que el monto total.")
         elif recibido == monto_total: # Si el dinero recibido es igual al monto total
             print("\nNo hay cambio que devolver.")
-        elif ((recibido - monto_total) % 10 != 0): # Si el cambio no es un multiplo de 10 no existe un billete que cubra la necesidad
+        elif ((recibido - monto_total) % valores_billetes[-1] != 0): # Si el cambio no es un multiplo de 10 no existe un billete que cubra la necesidad
             print("\nEl cambio no se puede devolver debido a la falta de billetes con denominacion adecuada.")
         else: # Si el monto recibido es mayor al monto total
             cambio = calcular_cambio(monto_total, recibido) # Se llama a la funcion para calcular el cambio
             
             print("\nEl cambio a devolver es:")
-            for i in range(len(valores_billetes)):
-                print(f" - {cambio[i]} billetes de ${valores_billetes[i]}")
+
+            for i, billete in enumerate(cambio): # Visto hoy (22/08/25), se utiliza el enumerate para trar ambos datos de forma adecuada
+                if billete: # Si la cantidad de billetes es mayor a cero
+                    print(f" - {billete} billetes de ${valores_billetes[i]}") # Mostramos por pantalla la cantidad de billetes de un valor
 
         monto_total = int(input("\nIngrese el monto total: "))
         recibido = int(input("Ingrese el dinero recibido (-1 para cancelar): "))
