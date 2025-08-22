@@ -50,9 +50,9 @@ def main():
             
             print("\nEl cambio a devolver es:")
 
-            for i, billete in enumerate(cambio): # Visto hoy (22/08/25), se utiliza el enumerate para trar ambos datos de forma adecuada
-                if billete: # Si la cantidad de billetes es mayor a cero
-                    print(f" - {billete} billetes de ${valores_billetes[i]}") # Mostramos por pantalla la cantidad de billetes de un valor
+            for cant, billete in zip(cambio, valores_billetes): # Visto hoy (22/08/25), se utiliza el zip para traer ambos datos de forma adecuada
+                if cant: # Si la cantidad de billetes es mayor a cero
+                    print(f" - {cant} billetes de ${billete}") # Mostramos la cantidad de billetes de un valor
 
         monto_total = int(input("\nIngrese el monto total: "))
         recibido = int(input("Ingrese el dinero recibido (-1 para cancelar): "))
