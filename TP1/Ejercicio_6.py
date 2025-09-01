@@ -22,4 +22,10 @@ def concatenar_numeros(num1: int, num2: int):
     print(f"Numeros recibidos:\n - Número 1: {num1}\n - Número 2: {num2}")
     return resultado
 
-print(concatenar_numeros(1234, 567))
+def main():
+    # Generamos numeros aleatorios y llamamos a la funcion.
+    print(f"Resultado: {concatenar_numeros(random.randint(1,100), random.randint(1,100))}")
+    pass
+
+if __name__ == "__main__":
+    main()
