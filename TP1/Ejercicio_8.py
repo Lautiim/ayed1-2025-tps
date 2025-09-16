@@ -72,7 +72,6 @@ def imprimir_calendario(mes: int, año: int):
 def main():
     """ Funcion principal del programa """
     print("--------- Bienvenido ---------")
-    
 
     # Pedimos al usuario que ingrese una fecha
     dia = int(input("Ingrese el dia (1-31): "))
