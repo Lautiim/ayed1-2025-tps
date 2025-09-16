@@ -36,14 +36,14 @@ def dias_en_mes(mes: int, año: int) -> int:
         raise ValueError("El mes debe estar entre 1 y 12.")
 
     match mes:
-        case 1 | 3 | 5 | 7 | 8 | 10 | 12:
+        case 1 | 3 | 5 | 7 | 8 | 10 | 12: # Meses con 31 dias
             return 31
-        case 4 | 6 | 9 | 11:
+        case 4 | 6 | 9 | 11: # Meses con 30 dias
             return 30
-        case 2: 
-            if es_bisiesto(año):
+        case 2: # Febrero, es especial porque depende si es bisiesto o no
+            if es_bisiesto(año): # Si es bisiesto, tiene 29 dias
                 return 29
-            else:
+            else: # Caso contrario, tiene 28 dias
                 return 28
 
 def imprimir_calendario(mes: int, año: int):
@@ -53,17 +53,18 @@ def imprimir_calendario(mes: int, año: int):
 
     Post: Imprime el calendario del mes y año dados.
     """
-    print(f"\n   Calendario {mes}/{año}")
-    print("Do Lu Ma Mi Ju Vi Sa")
+    print(f"\n   Calendario {mes}/{año}") # Mostramos el mes y año
+    print("-----------------------")
+    print("Do Lu Ma Mi Ju Vi Sa") # Mostramos los dias de la semana
 
-    inicio = diadelasemana(1, mes, año)
-    dias = dias_en_mes(mes, año)
-    print("   " * inicio, end="")
+    inicio = diadelasemana(1, mes, año) # Obtenemos el dia de la semana del primer dia del mes
+    dias = dias_en_mes(mes, año) # Obtenemos la cantidad de dias del mes
+    print("   " * inicio, end="") # Imprimimos los espacios hasta el primer dia del mes
 
-    for dia in range(1, dias + 1):
-        print(f"{dia:2}", end=" ")
-        inicio += 1
-        if inicio % 7 == 0:
+    for dia in range(1, dias + 1): # Recorremos los dias del mes
+        print(f"{dia:2}", end=" ") # Imprimimos el dia con un espacio
+        inicio += 1 # Se incrementa el contador de dias para saber cuando hacer el salto de linea
+        if inicio % 7 == 0: # Si el contador es multiplo de 7, hacemos un salto de linea
             print()
 
     print("\n")
