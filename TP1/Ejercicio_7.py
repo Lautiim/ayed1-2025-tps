@@ -84,17 +84,67 @@ def diasiguiente(dia: int, mes: int, anio: int) -> str:
     return dia, mes, anio
 
 
+def sumar_dias(dia, mes, anio, dias_a_sumar):
+    """Suma la cantidad de dias indicados, a una fecha dada. Limitandose a utilizar la funcion diasiguiente().
+    
+    Pre: Recibe 4 enteros positivos, que representan: dia, mes, año y la cantidad de dias a sumar.
+
+    Post: Devuelve tres enteros positivos, que representan: dia, mes y año de la nueva fecha.
+    
+    """
+    for _ in range(dias_a_sumar): # Recorremos la cantidad de dias a sumar
+        dia, mes, anio = diasiguiente(dia, mes, anio) # Obtenemos el dia siguiente
+    return dia, mes, anio # Al finalizar, devolvemos la nueva fecha
+
+
+def dias_entre_fechas(dia1, mes1, anio1, dia2, mes2, anio2):
+    """Calcula la cantidad de días entre dos fechas. Limitandose a utilizar la función diasiguiente().
+
+    Pre: Recibe 6 enteros positivos, que representan: dia1, mes1, anio1 y dia2, mes2, anio2.
+
+    Post: Devuelve un entero positivo, que representa la cantidad de días entre las dos fechas.
+
+    """
+
+    # Validamos que la segunda fecha es posterior a la primera
+    if (anio2 + mes2, dia2) < (anio1 + mes1, dia1):
+        raise ValueError("La segunda fecha debe ser posterior a la primera.")
+
+    contador = 0 # Se utiliza para contar la cantidad de dias entre las dos fechas
+    
+    fecha_actual = (dia1, mes1, anio1)
+    fecha_final = (dia2, mes2, anio2)
+    
+    while fecha_actual != fecha_final: # Mientras la fecha actual no sea igual a la fecha final
+        fecha_actual = diasiguiente(*fecha_actual) # Obtenemos el dia siguiente
+        contador += 1
+    return contador
+
+
 def main():
     """ Funcion principal del programa """
     print("--------- Bienvenido ---------")
     
-    # Se solicita una fecha al usuario para validar la funcion.
-    dia = int(input("Ingrese el dia: "))
-    mes = int(input("Ingrese el mes: "))
-    anio = int(input("Ingrese el año: "))
-    print(f"\nFecha ingresada: {dia}/{mes}/{anio}")
-    dia_siguiente = diasiguiente(dia, mes, anio)
-    print(f"El dia siguiente es: {dia_siguiente[0]}/{dia_siguiente[1]}/{dia_siguiente[2]}")
+    # Valores para pruebas
+    dia_inicio = 28
+    mes_inicio = 2
+    anio_inicio = 2020 
+    dia_final = 5
+    mes_final = 3
+    anio_final = 2020
+    dias_a_sumar = 10
+
+    # Probamos la función diasiguiente():
+    siguiente_dia = diasiguiente(dia_inicio, mes_inicio, anio_inicio)
+    print(f"El día siguiente a {dia_inicio}/{mes_inicio}/{anio_inicio} es: {siguiente_dia[0]}/{siguiente_dia[1]}/{siguiente_dia[2]}")
+
+    # Probamos la función dias_entre_fechas():
+    dias = dias_entre_fechas(dia_inicio, mes_inicio, anio_inicio, dia_final, mes_final, anio_final)
+    print(f"Días entre {dia_inicio}/{mes_inicio}/{anio_inicio} y {dia_final}/{mes_final}/{anio_final}: {dias}")
+
+    # Probamos la función sumar_dias():
+    nueva_fecha = sumar_dias(dia_inicio, mes_inicio, anio_inicio, dias_a_sumar)
+    print(f"Fecha después de sumar {dias_a_sumar} días a {dia_inicio}/{mes_inicio}/{anio_inicio}: {nueva_fecha[0]}/{nueva_fecha[1]}/{nueva_fecha[2]}")
 
 if __name__ == "__main__":
     main()
