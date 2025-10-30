@@ -5,6 +5,9 @@ def es_capicua(cadena: str) -> bool:
 
     Post: Devuelve True si la cadena es capicua, False en caso contrario
     """
+    assert isinstance(cadena, str), "La entrada debe ser una cadena de caracteres"
+    cadena = cadena.strip().lower()  # Normalizamos la cadena
+
     i = 0  # índice inicial
     j = len(cadena) - 1  # índice final
     while i < j:
