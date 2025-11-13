@@ -1,0 +1,10 @@
+perro gato perro gato perro
+reconocer
+anita lava la tina
+SoloPuntuación: ... !!! ??? ;;; ,,, ::: --- (— – -)
+comillas 'simples' y "dobles"
+Correo: prueba@example.com
+URL: https://ejemplo.com/path?x=1&y=2
+CSV: id, nombre, edad, activo
+1, Ana, 20, true
+2, José, 35, false

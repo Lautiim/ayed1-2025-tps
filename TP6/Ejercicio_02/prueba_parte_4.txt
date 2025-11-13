@@ -1,0 +1,10 @@
+sin_puntuacion ni_acentos
+emojis: 😊🚀🌎
+guiones: -, –, —
+Largo: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+MIX123 mezclaDeLetrasYNumeros 00123
+Repetida
+Repetida
+palabras-con-guiones y_palabras_con_guion_bajo
+tildes: café, canción, piñata, avión
+ordenar, ordenar, ordenar; contar

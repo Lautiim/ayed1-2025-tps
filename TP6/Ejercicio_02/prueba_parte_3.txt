@@ -1,0 +1,10 @@
+3, Zoë, 27, true
+Caracteres: aáàâä eéèêë iíìîï oóòôö uúùûü ñ Ñ ç
+MAYÚSCULAS Y minúsculas MezClAdAs
+    tres espacios al inicio
+espacios al final   
+    marcador con tab al inicio
+palabra1	palabra2	palabra3
+muchos    espacios    entre    palabras
+línea_vacía_siguiente
+

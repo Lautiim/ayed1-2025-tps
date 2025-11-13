@@ -1,0 +1,43 @@
+# Archivo de prueba para ejercicio_02
+Hola mundo
+hola mundo
+Hola, mundo!
+¿Cómo estás?
+bien, gracias. ¿Y tú?
+Números: 0 1 2 3 4 5 6 7 8 9
+-3.14 2.718 0.0 +42 1e-3 0xFF 0755
+Fecha: 2025-11-13 14:30:00
+Palabras repetidas repetidas repetidas
+perro gato perro gato perro
+reconocer
+anita lava la tina
+SoloPuntuación: ... !!! ??? ;;; ,,, ::: --- (— – -)
+comillas 'simples' y "dobles"
+Correo: prueba@example.com
+URL: https://ejemplo.com/path?x=1&y=2
+CSV: id, nombre, edad, activo
+1, Ana, 20, true
+2, José, 35, false
+3, Zoë, 27, true
+Caracteres: aáàâä eéèêë iíìîï oóòôö uúùûü ñ Ñ ç
+MAYÚSCULAS Y minúsculas MezClAdAs
+    tres espacios al inicio
+espacios al final   
+    marcador con tab al inicio
+palabra1	palabra2	palabra3
+muchos    espacios    entre    palabras
+línea_vacía_siguiente
+
+sin_puntuacion ni_acentos
+emojis: 😊🚀🌎
+guiones: -, –, —
+Largo: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+MIX123 mezclaDeLetrasYNumeros 00123
+Repetida
+Repetida
+palabras-con-guiones y_palabras_con_guion_bajo
+tildes: café, canción, piñata, avión
+ordenar, ordenar, ordenar; contar
+[[]] {{}} (() ) <> <> || && ==
+Sí/No: sí; no; SI; NO
+FIN
