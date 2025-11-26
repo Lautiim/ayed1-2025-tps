@@ -1,6 +1,3 @@
-from tabulate import tabulate
-
-
 def main():
     # Pedimos el numero
     try:
@@ -12,12 +9,11 @@ def main():
     # Generamos la tabla de multiplicar por comprension
     tabla = {i: n * i for i in range(1, 13)}
     
-    # Preparamos los datos para tabulate
-    datos = [[f"{n} x {i}", resultado] for i, resultado in tabla.items()]
-    
-    # Mostramos con formato de tabla
+    # Mostramos con formato simple
     print(f"\nTabla de multiplicar del {n}:")
-    print(tabulate(datos, headers=["Operación", "Resultado"], tablefmt="grid"))
+    print("-" * 30)
+    for i, resultado in tabla.items():
+        print(f"{n} x {i:2} = {resultado}")
 
 
 if __name__ == "__main__":
